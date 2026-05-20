@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>NOVA AI | Futuristic Portfolio of an AI Engineer</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- GSAP for smooth animations and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Three.js for neural background & particles -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.128.0/build/three.module.js"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-content">
+    <h1>⚡ NEURAL BOOT ⚡</h1>
+    <div class="loader-bar"><div class="loader-progress" id="progressFill"></div></div>
+    <p style="margin-top: 20px; color:#0ff">loading AI interface...</p>
+  </div>
+</div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="scan-line"></div>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">baLOLO<span style="color:#0ff">//AI</span></div>
+    <div class="menu-icon" id="menuIcon"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#certificates" class="nav-link">Certificates</a></li>
+      <li><a href="#cv" class="nav-link">CV</a></li>
+      <li><a href="#journey" class="nav-link">Journey</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="home" class="hero container">
+  <div class="hero-content">
+    <span class="glow-text">// AI ENGINEER & DATA SCIENTIST</span>
+    <h1 style="font-size: 3.2rem;">Muhammad Yasin <span style="color:#0ff;">Jamal</span></h1>
+    <div class="role-changer" id="roleText">AI Engineer</div>
+    <p>Crafting intelligent systems, deep learning architectures, and futuristic web experiences. Pushing boundaries of human-AI synergy.</p>
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-number" id="expCounter">0</div><span>+ Projects</span></div>
+      <div class="stat-card"><div class="stat-number" id="certCounter">0</div><span>Certifications</span></div>
+      <div class="stat-card"><div class="stat-number" id="codeCounter">0</div><span>Commits</span></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn-neon" id="viewProjectsBtn">View Projects</button>
+      <button class="btn-neon" id="downloadCVBtn">Download CV</button>
+      <button class="btn-neon" id="contactBtn">Contact Me</button>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="/home/m-yasinjamal/Downloads/yasin.png" alt="profile" class="profile-pic">
+  </div>
+</section>
+
+<section id="skills"><h2 class="section-title">⚡ Cyber Skills Matrix</h2>
+<div class="skills-grid">
+  <div class="skill-category"><h3><i class="fas fa-brain"></i> AI / Data Science</h3><div class="skill-items"><span class="skill-badge"><i class="fab fa-python"></i>Python</span><span class="skill-badge">TensorFlow</span><span class="skill-badge">PyTorch</span><span class="skill-badge">NLP</span><span class="skill-badge">Scikit</span><span class="skill-badge">Pandas</span><span class="skill-badge">NumPy</span></div><div class="progress-bar-bg"><div class="progress-fill" style="width:92%"></div></div></div>
+  <div class="skill-category"><h3><i class="fas fa-mobile-alt"></i> Mobile/Web</h3><div class="skill-items"><span class="skill-badge">Flutter</span><span class="skill-badge">React</span><span class="skill-badge">Tailwind</span><span class="skill-badge">Node.js</span><span class="skill-badge">Laravel</span></div><div class="progress-bar-bg"><div class="progress-fill" style="width:88%"></div></div></div>
+  <div class="skill-category"><h3><i class="fas fa-tools"></i> Tools/DevOps</h3><div class="skill-items"><span class="skill-badge">Docker</span><span class="skill-badge">Git/GitHub</span><span class="skill-badge">Linux</span><span class="skill-badge">Jupyter</span><span class="skill-badge">Figma</span></div><div class="progress-bar-bg"><div class="progress-fill" style="width:85%"></div></div></div>
+</div></section>
+
+<section id="projects"><h2 class="section-title">⟁ Neural Projects</h2><div class="projects-grid" id="projectsGrid"></div></section>
+
+<section id="certificates"><h2 class="section-title">📜 Holographic Credentials</h2><div class="certs-grid" id="certsGrid"></div></section>
+
+<section id="cv"><h2 class="section-title">📄 Digital CV Core</h2><div class="glass-card" style="max-width:800px;margin:0 auto;padding:2rem;text-align:center"><h3>AI Engineer • Data Science Architect</h3><p>MSc in AI (2025) • 5+ years industry experience • 12+ shipped ML products</p><p><strong>Education:</strong> PhD candidate in Deep Learning | <strong>Experience:</strong> Lead ML at Nexus AI</p><button class="btn-neon" id="downloadCVCore"><i class="fas fa-download"></i> Download CV (PDF)</button></div></section>
+
+<section id="journey"><h2 class="section-title">📈 Ascension Timeline</h2><div class="journey-container"><div class="timeline" id="timeline"></div><canvas id="journeyGraph" width="700" height="200" style="max-width:100%; margin-top:40px; background:rgba(0,0,0,0.4); border-radius:20px;"></canvas></div></section>
+
+<section id="contact">
+  <h2 class="section-title">🔮 Neural Link Hub</h2>
+
+  <div class="social-links">
+
+    <a href="https://github.com/UstadYasin" target="_blank" class="social-card">
+      <i class="fab fa-github fa-paper-plane"></i>
+      <p>GitHub</p>
+    </a>
+
+    <a href="https://www.linkedin.com/in/muhammad-yasin-jamal-6a42a4260/" target="_blank" class="social-card">
+      <i class="fab fa-linkedin "></i>
+      <p>LinkedIn</p>
+    </a>
+
+    <a href="https://www.instagram.com/m_yasin_jamal/" target="_blank" class="social-card">
+      <i class="fab fa-instagram "></i>
+      <p>Instagram</p>
+    </a>
+
+    <a href="mailto:yasinhazaraoqi@gmail.com" class="social-card">
+      <i class="fas fa-envelope "></i>
+      <p>Gmail</p>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100076872764018" target="_blank" class="social-card">
+      <i class="fab fa-facebook "></i>
+      <p>Facebook</p>
+    </a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <button class="btn-neon" id="msgBtn">
+      <i class="fas fa-paper-plane"></i> Send Quantum Msg
+    </button>
+  </div>
+</section>
+<footer>© 2026 // the world is yours!!</footer>
+
+<script type="module">
+  import * as THREE from 'three';
+  // --- THREE.JS Neural Background + particles & holographic rings
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x03060c);
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 25;
+  const renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  document.body.insertBefore(renderer.domElement, document.body.firstChild);
+  renderer.domElement.style.position = 'fixed';
+  renderer.domElement.style.top = '0';
+  renderer.domElement.style.left = '0';
+  renderer.domElement.style.zIndex = '-1';
+  
+  // particles & neural net
+  const particlesGeometry = new THREE.BufferGeometry();
+  const particleCount = 1800;
+  const positions = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount; i++) {
+    positions[i*3] = (Math.random() - 0.5) * 100;
+    positions[i*3+1] = (Math.random() - 0.5) * 60;
+    positions[i*3+2] = (Math.random() - 0.5) * 50 - 20;
+  }
+  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const particleMat = new THREE.PointsMaterial({ color: 0x00ccff, size: 0.2, transparent: true, opacity: 0.6 });
+  const points = new THREE.Points(particlesGeometry, particleMat);
+  scene.add(points);
+  
+  // lines connecting nearby particles
+  const lineMaterial = new THREE.LineBasicMaterial({ color: 0x0ff, transparent: true, opacity: 0.15 });
+  // additional floating orbs
+  const orbGeometry = new THREE.SphereGeometry(0.45, 16, 16);
+  const orbMat = new THREE.MeshStandardMaterial({ color: 0x33aaff, emissive: 0x2266aa, emissiveIntensity: 0.8 });
+  for (let i=0;i<60;i++) {
+    const orb = new THREE.Mesh(orbGeometry, orbMat);
+    orb.position.set((Math.random() - 0.5)*60, (Math.random() - 0.5)*40, (Math.random() - 0.5)*40 - 15);
+    scene.add(orb);
+  }
+  const ambientLight = new THREE.AmbientLight(0x111122);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x2266ff, 0.8);
+  pointLight.position.set(10,10,20);
+  scene.add(pointLight);
+  
+  function animateBackground() {
+    requestAnimationFrame(animateBackground);
+    points.rotation.y += 0.0005;
+    points.rotation.x += 0.0003;
+    camera.position.x += (0 - camera.position.x) * 0.02;
+    camera.position.y += (0 - camera.position.y) * 0.02;
+    camera.lookAt(0,0,0);
+    renderer.render(scene, camera);
+  }
+  animateBackground();
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+  
+  // data for dynamic sections
+  const projects = [
+    { title: "Toxic Comment Classifier", desc: "BERT + LSTM hybrid to detect toxicity with 96% accuracy.", tech: "Python, TensorFlow, Transformers", images: ["https://picsum.photos/id/1/400/200", "https://picsum.photos/id/20/400/200", "https://picsum.photos/id/26/400/200"] },
+    { title: "Taxi Fare Prediction", desc: "Geospatial deep learning model + NYC dataset.", tech: "PyTorch, Pandas, Mapbox", images: ["https://picsum.photos/id/13/400/200", "https://picsum.photos/id/14/400/200", "https://picsum.photos/id/55/400/200"] },
+    { title: "AI Shop Management App", desc: "Flutter + Firebase + recommendation engine.", tech: "Flutter, Firebase, Scikit-learn", images: ["https://picsum.photos/id/30/400/200", "https://picsum.photos/id/32/400/200", "https://picsum.photos/id/39/400/200"] }
+  ];
+  const certificates = [
+    { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", skills: "CNNs, RNNs, Transformers", year: "2024" },
+    { title: "TensorFlow Developer Cert", issuer: "Google", skills: "TF, Keras, Deployment", year: "2023" },
+    { title: "Advanced NLP", issuer: "Stanford", skills: "BERT, GPT, Attention", year: "2025" }
+  ];
+  
+  function buildProjects() {
+    const grid = document.getElementById('projectsGrid');
+    projects.forEach((p, idx) => {
+      const card = document.createElement('div'); card.className = 'project-card glass-card'; card.style.padding = '1.2rem';
+      let carouselHtml = `<div class="carousel" id="car-${idx}"><div class="carousel-images" id="carouselInner-${idx}">${p.images.map(img => `<img class="carousel-img" src="${img}" alt="preview">`).join('')}</div><button class="carousel-btn left" data-idx="${idx}" data-dir="prev">◀</button><button class="carousel-btn right" data-idx="${idx}" data-dir="next">▶</button></div>`;
+      card.innerHTML = carouselHtml + `<h3>${p.title}</h3><p>${p.desc}</p><div class="tech-pills">${p.tech.split(',').map(t => `<span class="skill-badge">${t.trim()}</span>`).join('')}</div><div style="display:flex;gap:12px;"><button class="btn-neon" style="padding:6px 16px;">GitHub</button><button class="btn-neon" style="padding:6px 16px;">Live Demo</button></div>`;
+      grid.appendChild(card);
+    });
+    document.querySelectorAll('.carousel-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = btn.dataset.idx; const dir = btn.dataset.dir; const carouselDiv = document.getElementById(`carouselInner-${idx}`);
+        if (!carouselDiv) return;
+        let current = Number(carouselDiv.dataset.current || 0);
+        const total = carouselDiv.children.length;
+        if(dir === 'prev') current = (current - 1 + total) % total;
+        else current = (current + 1) % total;
+        carouselDiv.style.transform = `translateX(-${current * 100}%)`;
+        carouselDiv.dataset.current = current;
+      });
+      btn.parentElement.querySelector('.carousel-images')?.setAttribute('data-current', '0');
+    });
+  }
+  function buildCerts() {
+    const certGrid = document.getElementById('certsGrid');
+    certificates.forEach(c => {
+      const flip = document.createElement('div'); flip.className = 'flip-card';
+      flip.innerHTML = `<div class="flip-inner"><div class="flip-front"><i class="fas fa-certificate" style="font-size:3rem;color:#0ff"></i><h3>${c.title}</h3><p>${c.issuer}</p></div><div class="flip-back"><i class="fas fa-brain"></i><p>${c.skills}</p><p>Year: ${c.year}</p><button class="btn-neon" style="margin-top:12px;">Verify</button></div></div>`;
+      certGrid.appendChild(flip);
+    });
+  }
+  function buildTimeline() {
+    const timelineDiv = document.getElementById('timeline');
+    const stages = ["Web Dev", "Flutter Dev", "Data Science", "ML Engineer", "Deep Learning", "NLP Research", "AI Architect"];
+    stages.forEach((s,i) => {
+      const node = document.createElement('div'); node.className = 'timeline-node glass-card'; node.style.padding = '1rem'; node.style.marginBottom = '1.5rem';
+      node.innerHTML = `<h3>${s}</h3><p>Milestone ${i+1} • ${new Date(2020+i,0,1).getFullYear()}</p>`;
+      timelineDiv.appendChild(node);
+    });
+  }
+  buildProjects(); buildCerts(); buildTimeline();
+  
+  // animated counters
+  const counters = [{el:'expCounter', target:28},{el:'certCounter', target:15},{el:'codeCounter', target:347}];
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) startCounters(); });
+  }, { threshold: 0.3 });
+  observer.observe(document.getElementById('home'));
+  function startCounters() {
+    counters.forEach(c => { let val=0; const target=c.target; const el=document.getElementById(c.el); if(!el) return; const update=()=>{ if(val<target) { val+=Math.ceil(target/40); el.innerText=val; requestAnimationFrame(update); } else el.innerText=target; }; update(); });
+  }
+  
+  // role text changer
+  const roles = ["AI Engineer", "Data Science Student", "ML Developer", "Deep Learning Enthusiast", "NLP Learner", "Web & Mobile Dev"];
+  let roleIdx=0; setInterval(()=>{ roleIdx=(roleIdx+1)%roles.length; document.getElementById('roleText').innerHTML=roles[roleIdx]; }, 2400);
+  
+  // cursor glow
+  const cursorDiv = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', (e)=>{ cursorDiv.style.left=e.clientX+'px'; cursorDiv.style.top=e.clientY+'px'; });
+  
+  // loading simulation
+  let prog=0; const interval = setInterval(()=>{ prog+=Math.random()*15; if(prog>=100) { prog=100; clearInterval(interval); document.getElementById('loader').style.opacity='0'; setTimeout(()=>{ document.getElementById('loader').style.display='none'; }, 1000); } document.getElementById('progressFill').style.width=prog+'%'; }, 180);
+  
+  // navbar active & scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = ''; sections.forEach(sec => { const top=sec.offsetTop-150; if(pageYOffset>=top) current=sec.getAttribute('id'); });
+    navLinks.forEach(link => { link.classList.remove('active'); if(link.getAttribute('href')===`#${current}`) link.classList.add('active'); });
+  });
+  document.querySelectorAll('.nav-link, #viewProjectsBtn, #contactBtn').forEach(btn => {
+    btn.addEventListener('click', (e) => { e.preventDefault(); const targetId = btn.getAttribute('href')?.slice(1) || (btn.id==='viewProjectsBtn'?'projects':(btn.id==='contactBtn'?'contact':'home')); document.getElementById(targetId)?.scrollIntoView({behavior:'smooth'}); });
+  });
+  document.getElementById('downloadCVBtn')?.addEventListener('click',()=>alert("CV download simulation - neural package ready"));
+  document.getElementById('downloadCVCore')?.addEventListener('click',()=>alert("CV PDF (AI Enhanced) would download."));
+  document.getElementById('msgBtn')?.addEventListener('click',()=>alert("📡 Quantum message sent to neural hub."));
+  
+  // graph journey - canvas animated line
+  const canvas = document.getElementById('journeyGraph');
+  const ctx = canvas.getContext('2d'); let progress=0;
+  function drawGraph() { if(!ctx)return; ctx.clearRect(0,0,canvas.width,canvas.height); ctx.strokeStyle='#0ff'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(30,160); let points=[30,160,150,140,270,110,390,90,510,60,630,40]; for(let i=0;i<points.length;i+=2){ let x=points[i]; let y=points[i+1]; if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y); } ctx.stroke(); ctx.shadowBlur=8; ctx.shadowColor='cyan'; for(let i=0;i<points.length;i+=2){ ctx.beginPath(); ctx.fillStyle='#0ff'; ctx.arc(points[i], points[i+1], 6, 0, 2*Math.PI); ctx.fill(); } }
+  drawGraph();
+  window.addEventListener('resize',()=>{ canvas.width=Math.min(700,window.innerWidth-40); drawGraph(); });
+  canvas.width=700; drawGraph();
+  
+  // gsap scroll reveals
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.glass-card, .skill-category, .project-card, .flip-card').forEach(el => {
+    gsap.from(el, { opacity:0, y:60, duration:0.8, scrollTrigger:{ trigger:el, start:'top 85%', toggleActions:'play none none reverse' } });
+  });
+  gsap.from('.hero-content', { opacity:0, x:-60, duration:1, scrollTrigger:{ trigger:'#home', start:'top 80%' } });
+  
+  // mobile menu
+  const menuIcon=document.getElementById('menuIcon'); const navList=document.getElementById('navLinks');
+  menuIcon.addEventListener('click',()=>navList.classList.toggle('active'));
+  document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',()=>navList.classList.remove('active')));
+</script>
+</body>
+</html>
